@@ -4,11 +4,13 @@ public class LambdaJob {
 	private final int startTime;
 	private final int endTime;
 	private final int label;
+	private final int weight;
 
-	public LambdaJob (int startTime, int endTime, int label) {
+	public LambdaJob (int startTime, int endTime, int label, int weight) {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.label = label;
+		this.weight = weight;
 	}
 
 	public int getStartTime() {
@@ -21,5 +23,9 @@ public class LambdaJob {
 
 	public int getLabel() {
 		return label;
+	}
+
+	public int getWeight() {
+		return weight;
 	}
 }
