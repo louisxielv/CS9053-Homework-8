@@ -10,7 +10,9 @@ import java.util.List;
  */
 public class LambdaWeightedScheduler {
     public int scheduel(List<LambdaJob> jobs) {
-
+        if (jobs == null || jobs.size() == 0) {
+            return 0;
+        }
         // sort jobs by the endTime
         Collections.sort(jobs, new Comparator<LambdaJob>(){
             public int compare(LambdaJob job1, LambdaJob job2){
@@ -50,8 +52,11 @@ public class LambdaWeightedScheduler {
         if (jobs.get(end).getEndTime() <= target) {
             return end;
         }
-        else {
+        if (jobs.get(start).getEndTime() <= target) {
             return start;
+        }
+        else {
+            return -1;
         }
 
 
