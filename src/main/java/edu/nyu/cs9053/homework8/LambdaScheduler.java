@@ -7,7 +7,9 @@ import java.util.List;
 
 public class LambdaScheduler {
 	public List<LambdaJob> scheduel(List<LambdaJob> jobs) {
-
+		if (jobs == null || jobs.size() == 0) {
+			return jobs;
+		}
 		// sort jobs by the endTime
 		Collections.sort(jobs, new Comparator<LambdaJob>(){
 			public int compare(LambdaJob job1, LambdaJob job2){
